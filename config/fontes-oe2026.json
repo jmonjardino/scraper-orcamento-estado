@@ -1,0 +1,78 @@
+{
+  "release": {
+    "release_id": "oe-2026-approved-initial",
+    "year": 2026,
+    "phase": "approved_initial",
+    "publication": "Lei n.º 73-A/2025, de 30 de dezembro",
+    "allowed_domains": [
+      "files.diariodarepublica.pt",
+      "www.eo.gov.pt"
+    ],
+    "request": {
+      "timeout_seconds": 30,
+      "max_attempts": 3,
+      "min_interval_seconds": 2.0,
+      "user_agent": "ExploradorOrcamentoEstado/0.1 (arquivo reprodutivel; contacto: a-definir)"
+    }
+  },
+  "artifacts": [
+    {
+      "source_id": "oe2026-lei",
+      "publisher": "Diário da República",
+      "title": "Lei n.º 73-A/2025 — Orçamento do Estado para 2026",
+      "url": "https://files.diariodarepublica.pt/1s/2025/12/25002/0000200271.pdf",
+      "format": "pdf",
+      "role": "legal_reference",
+      "coverage": "Publicação legal do OE 2026",
+      "reuse_terms": "unresolved",
+      "expected_mime_types": ["application/pdf"]
+    },
+    {
+      "source_id": "oe2026-mapa1-xml",
+      "publisher": "Entidade Orçamental",
+      "title": "Mapa 1 — Despesas por missão de base orgânica, desagregadas por programas",
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodoEstado_ficheirosdeDados/Mapa1-2026.xml",
+      "format": "xml",
+      "role": "structured_primary_candidate",
+      "coverage": "Programas do Mapa 1; a soma reconcilia com o total não consolidado da Administração Central",
+      "reference_total_euros": "352472389960",
+      "reference_total_scope": "Administração Central, não consolidado",
+      "reference_locator": "oe2026-mapa1-pdf, página 1, ‘Total da Administração Central’",
+      "reuse_terms": "unresolved",
+      "expected_mime_types": ["application/xml", "text/xml"]
+    },
+    {
+      "source_id": "oe2026-mapa1-pdf",
+      "publisher": "Entidade Orçamental",
+      "title": "Mapa 1 — Mapa das despesas por missão de base orgânica, desagregadas por programas",
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc02_Mapa01.pdf",
+      "format": "pdf",
+      "role": "reference_total_evidence",
+      "coverage": "Administração Central e Segurança Social; contém totais consolidados e não consolidados",
+      "reuse_terms": "unresolved",
+      "expected_mime_types": ["application/pdf"]
+    },
+    {
+      "source_id": "oe2026-mbo-acoes",
+      "publisher": "Entidade Orçamental",
+      "title": "Dotações por programa, desdobradas por ações",
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/DesenvolvimentosOrcamentais/OE2026_MBO_Mapa2.pdf",
+      "format": "pdf",
+      "role": "fallback_evidence",
+      "coverage": "Administração Central e Segurança Social, conforme o mapa publicado",
+      "reuse_terms": "unresolved",
+      "expected_mime_types": ["application/pdf"]
+    },
+    {
+      "source_id": "oe2026-desenvolvimento-min02",
+      "publisher": "Entidade Orçamental",
+      "title": "Desenvolvimento orçamental da PCM",
+      "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/DesenvolvimentosOrcamentais/OE2026_MapaAC-DO-Min02.pdf",
+      "format": "pdf",
+      "role": "fallback_evidence",
+      "coverage": "Administração Central; detalhe por ministério e classificação económica",
+      "reuse_terms": "unresolved",
+      "expected_mime_types": ["application/pdf"]
+    }
+  ]
+}

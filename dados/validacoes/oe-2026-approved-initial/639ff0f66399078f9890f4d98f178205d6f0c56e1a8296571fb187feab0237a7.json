@@ -1,0 +1,52 @@
+{
+  "critical_rules_passed": true,
+  "dataset_sha256": "639ff0f66399078f9890f4d98f178205d6f0c56e1a8296571fb187feab0237a7",
+  "effective_publication_blockers": [
+    "reuse_terms_unresolved"
+  ],
+  "errors": [],
+  "financial_reconciliation": [
+    {
+      "calculated_cents": 35247238996000,
+      "difference_cents": 0,
+      "expected_cents": 35247238996000,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "passed": true,
+      "scope": "children_sum",
+      "source": {
+        "kind": "reported",
+        "locator": "oe2026-mapa1-pdf, página 1, ‘Total da Administração Central’",
+        "raw_unit": "EUR",
+        "raw_value": "352472389960",
+        "source_id": "oe2026-mapa1-pdf",
+        "source_sha256": "17142be64871020655c4fe58cbfe6d0827cd5bf0e07a7c55c6462d49ae66dd3b",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "tolerance_cents": 0
+    },
+    {
+      "calculated_cents": 35247238996000,
+      "difference_cents": 0,
+      "expected_cents": 35247238996000,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "passed": true,
+      "scope": "reference_total",
+      "source": {
+        "kind": "reported",
+        "locator": "oe2026-mapa1-pdf, página 1, ‘Total da Administração Central’",
+        "raw_unit": "EUR",
+        "raw_value": "352472389960",
+        "source_id": "oe2026-mapa1-pdf",
+        "source_sha256": "17142be64871020655c4fe58cbfe6d0827cd5bf0e07a7c55c6462d49ae66dd3b",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "tolerance_cents": 0
+    }
+  ],
+  "publication_status": "blocked",
+  "release_id": "oe-2026-approved-initial",
+  "schema_version": 1,
+  "tolerance_cents": 0,
+  "validation_status": "validated",
+  "view_id": "administracao_central_nao_consolidada_por_programa"
+}

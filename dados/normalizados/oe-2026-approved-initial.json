@@ -1,0 +1,694 @@
+{
+  "nodes": [
+    {
+      "amount_cents": 35247238996000,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": false,
+      "level": 0,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "official_code": null,
+      "official_code_status": "not_declared_by_source",
+      "official_label": "Total da Administração Central",
+      "parent_node_id": null,
+      "plain_label": null,
+      "sort_order": 0,
+      "source": {
+        "kind": "reported",
+        "locator": "oe2026-mapa1-pdf, página 1, ‘Total da Administração Central’",
+        "raw_unit": "EUR",
+        "raw_value": "352472389960",
+        "source_id": "oe2026-mapa1-pdf",
+        "source_sha256": "17142be64871020655c4fe58cbfe6d0827cd5bf0e07a7c55c6462d49ae66dd3b",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {},
+      "year": 2026
+    },
+    {
+      "amount_cents": 773361076300,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-001",
+      "official_code": "P-001",
+      "official_label": "ÓRGÃOS DE SOBERANIA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 1,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-001\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "7733610763",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "ENCARGOS GERAIS DO ESTADO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 101760902300,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-002",
+      "official_code": "P-002",
+      "official_label": "GOVERNAÇÃO",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 2,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-002\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "1017609023",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 60062191900,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-003",
+      "official_code": "P-003",
+      "official_label": "REPRESENTAÇÃO EXTERNA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 3,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-003\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "600621919",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "NEGÓCIOS ESTRANGEIROS"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 3687409957900,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-004",
+      "official_code": "P-004",
+      "official_label": "FINANÇAS",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 4,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-004\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "36874099579",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "FINANÇAS"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 17501746600000,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-005",
+      "official_code": "P-005",
+      "official_label": "GESTÃO DA DÍVIDA PÚBLICA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 5,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-005\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "175017466000",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "FINANÇAS"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 478873542900,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-006",
+      "official_code": "P-006",
+      "official_label": "ECONOMIA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 6,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-006\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "4788735429",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "ECONOMIA E COESAO TERRITORIAL"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 112799354300,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-007",
+      "official_code": "P-007",
+      "official_label": "COESÃO TERRITORIAL",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 7,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-007\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "1127993543",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "ECONOMIA E COESAO TERRITORIAL"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 16435749700,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-008",
+      "official_code": "P-008",
+      "official_label": "REFORMA DO ESTADO",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 8,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-008\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "164357497",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "REFORMA DO ESTADO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 383689086600,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-009",
+      "official_code": "P-009",
+      "official_label": "DEFESA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 9,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-009\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "3836890866",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "DEFESA NACIONAL"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 1011951283400,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-010",
+      "official_code": "P-010",
+      "official_label": "INFRAESTRUTURAS E HABITAÇÃO",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 10,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-010\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "10119512834",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "INFRAESTRUTURAS E HABITACÃO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 246041349700,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-011",
+      "official_code": "P-011",
+      "official_label": "JUSTIÇA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 11,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-011\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "2460413497",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "JUSTIÇA"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 331031035300,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-012",
+      "official_code": "P-012",
+      "official_label": "SEGURANÇA INTERNA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 12,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-012\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "3310310353",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "ADMINISTRAÇÃO INTERNA"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 817045317400,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-013",
+      "official_code": "P-013",
+      "official_label": "EDUCAÇÃO",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 13,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-013\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "8170453174",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "EDUCAÇÃO, CIÊNCIA E INOVAÇÃO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 647885319000,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-014",
+      "official_code": "P-014",
+      "official_label": "ENSINO SUPERIOR, CIÊNCIA E INOVAÇÃO",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 14,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-014\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "6478853190",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "EDUCAÇÃO, CIÊNCIA E INOVAÇÃO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 4682353250200,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-015",
+      "official_code": "P-015",
+      "official_label": "SAÚDE",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 15,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-015\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "46823532502",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "SAÚDE"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 3767371010600,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-016",
+      "official_code": "P-016",
+      "official_label": "TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 16,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-016\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "37673710106",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 311762380700,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-017",
+      "official_code": "P-017",
+      "official_label": "AMBIENTE E ENERGIA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 17,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-017\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "3117623807",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "AMBIENTE E ENERGIA"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 87692354800,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-018",
+      "official_code": "P-018",
+      "official_label": "CULTURA",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 18,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-018\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "876923548",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "CULTURA, JUVENTUDE E DESPORTO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 18632853700,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-019",
+      "official_code": "P-019",
+      "official_label": "JUVENTUDE E DESPORTO",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 19,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-019\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "186328537",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "CULTURA, JUVENTUDE E DESPORTO"
+      },
+      "year": 2026
+    },
+    {
+      "amount_cents": 209334379300,
+      "dimension": "programmatic",
+      "factual_tags": [],
+      "is_terminal": true,
+      "level": 1,
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-020",
+      "official_code": "P-020",
+      "official_label": "AGRICULTURA E MAR",
+      "parent_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+      "plain_label": null,
+      "sort_order": 20,
+      "source": {
+        "kind": "reported",
+        "locator": "/Mapa1/Registos/Registo[Programa=\"P-020\"]/TotalEmEuros",
+        "raw_unit": "EUR",
+        "raw_value": "2093343793",
+        "source_id": "oe2026-mapa1-xml",
+        "source_sha256": "18bf01da8c851243074644acd2336456da74fd0dcdea467e268c91e9484ff49d",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      },
+      "source_attributes": {
+        "ministerio": "AGRICULTURA E MAR"
+      },
+      "year": 2026
+    }
+  ],
+  "normalizer_version": 1,
+  "release": {
+    "dataset_status": "normalized_not_validated",
+    "phase": "approved_initial",
+    "publication": "Lei n.º 73-A/2025, de 30 de dezembro",
+    "release_id": "oe-2026-approved-initial",
+    "year": 2026
+  },
+  "schema_version": 1,
+  "search_index": [
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-001",
+      "official_code": "P-001",
+      "official_label": "ÓRGÃOS DE SOBERANIA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-002",
+      "official_code": "P-002",
+      "official_label": "GOVERNAÇÃO"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-003",
+      "official_code": "P-003",
+      "official_label": "REPRESENTAÇÃO EXTERNA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-004",
+      "official_code": "P-004",
+      "official_label": "FINANÇAS"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-005",
+      "official_code": "P-005",
+      "official_label": "GESTÃO DA DÍVIDA PÚBLICA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-006",
+      "official_code": "P-006",
+      "official_label": "ECONOMIA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-007",
+      "official_code": "P-007",
+      "official_label": "COESÃO TERRITORIAL"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-008",
+      "official_code": "P-008",
+      "official_label": "REFORMA DO ESTADO"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-009",
+      "official_code": "P-009",
+      "official_label": "DEFESA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-010",
+      "official_code": "P-010",
+      "official_label": "INFRAESTRUTURAS E HABITAÇÃO"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-011",
+      "official_code": "P-011",
+      "official_label": "JUSTIÇA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-012",
+      "official_code": "P-012",
+      "official_label": "SEGURANÇA INTERNA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-013",
+      "official_code": "P-013",
+      "official_label": "EDUCAÇÃO"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-014",
+      "official_code": "P-014",
+      "official_label": "ENSINO SUPERIOR, CIÊNCIA E INOVAÇÃO"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-015",
+      "official_code": "P-015",
+      "official_label": "SAÚDE"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-016",
+      "official_code": "P-016",
+      "official_label": "TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-017",
+      "official_code": "P-017",
+      "official_label": "AMBIENTE E ENERGIA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-018",
+      "official_code": "P-018",
+      "official_label": "CULTURA"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-019",
+      "official_code": "P-019",
+      "official_label": "JUVENTUDE E DESPORTO"
+    },
+    {
+      "node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:programa:P-020",
+      "official_code": "P-020",
+      "official_label": "AGRICULTURA E MAR"
+    }
+  ],
+  "view": {
+    "coverage": {
+      "accounting_classification": "mapa_da_lei_base_organica_por_programa",
+      "consolidation": "non_consolidated",
+      "currency": "EUR",
+      "gross_net": "not_declared_by_source",
+      "institutional_universe": "administracao_central",
+      "measure": "budgeted_expenditure",
+      "social_security": "excluded",
+      "unit": "cents"
+    },
+    "dimension": "programmatic",
+    "official_name": "Mapa 1 — Despesas por missão de base orgânica, desagregadas por programas",
+    "publication_blockers": [
+      "reuse_terms_unresolved",
+      "part_4_validation_pending"
+    ],
+    "publication_eligible": false,
+    "reference_total": {
+      "amount_cents": 35247238996000,
+      "source": {
+        "kind": "reported",
+        "locator": "oe2026-mapa1-pdf, página 1, ‘Total da Administração Central’",
+        "raw_unit": "EUR",
+        "raw_value": "352472389960",
+        "source_id": "oe2026-mapa1-pdf",
+        "source_sha256": "17142be64871020655c4fe58cbfe6d0827cd5bf0e07a7c55c6462d49ae66dd3b",
+        "transformation": "EUR decimal × 100 -> integer cents"
+      }
+    },
+    "root_node_id": "oe-2026-approved-initial:administracao_central_nao_consolidada_por_programa:root",
+    "selectable": false,
+    "view_id": "administracao_central_nao_consolidada_por_programa"
+  }
+}

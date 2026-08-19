@@ -1,0 +1,12 @@
+# Os originais e os relatórios de recolha são reconstruíveis e podem conter ficheiros grandes.
+arquivo/
+
+# Estado local de ferramentas.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Dependências e artefactos da aplicação web.
+node_modules/
+dist/
+.generated/
