@@ -45,6 +45,7 @@ def fixture():
             "root_node_id": root_id,
             "publication_blockers": [],
             "publication_eligible": True,
+            "selectable": True,
             "coverage": {
                 "institutional_universe": "administracao_central",
                 "social_security": "excluded",
@@ -66,6 +67,8 @@ def fixture():
                 "level": 0,
                 "parent_node_id": None,
                 "sort_order": 0,
+                "is_terminal": False,
+                "factual_tags": [],
                 "source": source("mapa-pdf"),
             },
             {
@@ -76,6 +79,8 @@ def fixture():
                 "level": 1,
                 "parent_node_id": root_id,
                 "sort_order": 1,
+                "is_terminal": True,
+                "factual_tags": ["Despesa vinculada por compromissos legais"],
                 "source": source("mapa-xml"),
             },
         ],
@@ -110,6 +115,12 @@ def fixture():
                 "url": f"https://dados.gov.pt/{source_id}",
                 "coverage": "Teste",
                 "reuse_terms": "public_domain",
+                "reuse_evidence": {
+                    "resource_url": f"https://dados.gov.pt/{source_id}",
+                    "license_url": "https://dados.gov.pt/pt/termos-de-utilizacao/",
+                    "checked_at": "2026-09-18T14:00:00Z",
+                    "statement": "Licença declarada no registo oficial do recurso.",
+                },
             }
             for source_id, title in (("mapa-pdf", "Mapa PDF"), ("mapa-xml", "Mapa XML"))
         ],
@@ -151,7 +162,29 @@ class WebPublicationTests(unittest.TestCase):
             self.assertEqual(first_current, first_release)
             payload = json.loads(first_current)
             self.assertEqual(payload["dataset_sha256"], MODULE.dataset_sha256(dataset))
+            self.assertEqual(payload["schema_version"], 2)
+            self.assertTrue(payload["view"]["selectable"])
+            self.assertFalse(payload["nodes"][0]["is_terminal"])
+            self.assertEqual(payload["nodes"][1]["factual_tags"], ["Despesa vinculada por compromissos legais"])
             self.assertNotIn("dataset_status", payload["release"])
+
+    def test_campos_do_simulador_exigem_tipos_explicitos(self):
+        dataset, report, catalog, approval = fixture()
+        dataset["view"]["selectable"] = "yes"
+        dataset["nodes"][0]["is_terminal"] = 0
+        dataset["nodes"][1]["factual_tags"] = ["", 7]
+        dataset_hash = MODULE.dataset_sha256(dataset)
+        report["dataset_sha256"] = dataset_hash
+        approval["dataset_sha256"] = dataset_hash
+        with self.assertRaises(MODULE.PublicationError) as context:
+            MODULE.validate_gate(dataset, report, catalog, approval)
+        self.assertTrue(
+            {
+                "view_selectable_invalid",
+                f"node_is_terminal_invalid:{dataset['nodes'][0]['node_id']}",
+                f"node_factual_tags_invalid:{dataset['nodes'][1]['node_id']}",
+            }.issubset(context.exception.reasons)
+        )
 
     def test_hash_release_e_view_têm_de_coincidir(self):
         dataset, report, catalog, approval = fixture()
@@ -223,6 +256,8 @@ class WebPublicationTests(unittest.TestCase):
                 "level": 2,
                 "parent_node_id": intermediate_id,
                 "sort_order": 1,
+                "is_terminal": True,
+                "factual_tags": [],
                 "source": source("mapa-xml"),
             }
         )
@@ -256,6 +291,23 @@ class WebPublicationTests(unittest.TestCase):
             MODULE.validate_gate(dataset, report, catalog, approval)
         self.assertIn("source_not_official_https:mapa-pdf", context.exception.reasons)
         self.assertIn("reuse_terms_unresolved:mapa-pdf", context.exception.reasons)
+
+    def test_termos_resolvidos_exigem_prova_do_recurso_exato(self):
+        dataset, report, catalog, approval = fixture()
+        catalog["artifacts"][0].pop("reuse_evidence")
+        with self.assertRaises(MODULE.PublicationError) as context:
+            MODULE.validate_gate(dataset, report, catalog, approval)
+        self.assertIn("reuse_evidence_invalid:mapa-pdf", context.exception.reasons)
+
+        catalog["artifacts"][0]["reuse_evidence"] = {
+            "resource_url": "https://dados.gov.pt/outro-recurso",
+            "license_url": "https://dados.gov.pt/pt/termos-de-utilizacao/",
+            "checked_at": "2026-09-18T14:00:00Z",
+            "statement": "Licença declarada no registo oficial do recurso.",
+        }
+        with self.assertRaises(MODULE.PublicationError) as context:
+            MODULE.validate_gate(dataset, report, catalog, approval)
+        self.assertIn("reuse_evidence_invalid:mapa-pdf", context.exception.reasons)
 
     def test_aprovacao_humana_tem_de_existir_e_corresponder_ao_sha(self):
         dataset, report, catalog, approval = fixture()

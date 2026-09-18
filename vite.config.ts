@@ -7,7 +7,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  publicDir: mode === "release" ? ".generated/public" : false,
+  publicDir: mode === "release" ? ".generated/public" : mode === "demo" ? ".generated/demo/public" : false,
   build: {
     outDir: "dist",
     emptyOutDir: true,
@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => ({
       input: {
         resumo: resolve(root, "index.html"),
         explorar: resolve(root, "explorar/index.html"),
+        simulador: resolve(root, "simulador/index.html"),
         metodologia: resolve(root, "metodologia/index.html"),
       },
     },

@@ -52,3 +52,13 @@ Esta vista não representa o total Administração Central + Segurança Social, 
 | `ambiguity` | âmbito afetado, evidência, impacto, resolução e se bloqueia release |
 
 Proveniência por formato: XML usa XPath/identificador e campo; XLSX usa folha/range/chave/coluna; CSV usa chave/coluna; PDF usa página/tabela/linha/coluna e excerto curto de controlo.
+
+## Contrato público v2
+
+O empacotador web mantém o conjunto normalizado no seu contrato interno v1 e produz um envelope público v2. Além dos campos já usados pelo resumo e pela exploração, a versão 2 expõe:
+
+- `view.selectable: boolean`, decisão explícita que autoriza ou bloqueia seleção no simulador;
+- `node.is_terminal: boolean`, coerente com a existência de filhos;
+- `node.factual_tags: string[]`, apenas com restrições factuais previamente declaradas.
+
+O gate rejeita tipos ausentes ou incompatíveis. O parser do navegador volta a validar o envelope antes de o usar. O conjunto OE 2026 atual tem `factual_tags: []` em todos os nós e `selectable: false`; estes valores são preservados sem inferir restrições nem selecionabilidade.

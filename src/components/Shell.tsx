@@ -2,7 +2,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import type { PublicationData } from "../types";
 
 interface ShellProps extends PropsWithChildren {
-  currentPage: "summary" | "explore" | "methodology";
+  currentPage: "summary" | "explore" | "simulate" | "methodology";
   data?: PublicationData;
   title: string;
   intro: ReactNode;
@@ -37,6 +37,7 @@ export function Shell({ currentPage, data, title, intro, children }: ShellProps)
           <nav aria-label="Navegação principal">
             <a href="/" aria-current={currentPage === "summary" ? "page" : undefined}>Resumo</a>
             <a href="/explorar/" aria-current={currentPage === "explore" ? "page" : undefined}>Explorar</a>
+            <a href="/simulador/" aria-current={currentPage === "simulate" ? "page" : undefined}>Simulador</a>
             <a href="/metodologia/" aria-current={currentPage === "methodology" ? "page" : undefined}>
               Metodologia e fontes
             </a>
@@ -47,6 +48,11 @@ export function Shell({ currentPage, data, title, intro, children }: ShellProps)
             {context.map((item) => <span key={item}>{item}</span>)}
           </div>
         </div>
+        {data?.demo && (
+          <div className="demo-banner" role="status">
+            <div className="header-inner">{data.demo.notice}</div>
+          </div>
+        )}
       </header>
       <main id="conteudo-principal" tabIndex={-1}>
         <section className="page-heading">

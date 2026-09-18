@@ -11,6 +11,8 @@ Esta pasta documenta as decisões e resultados implementados desde a seleção d
 - [Fundação web e gate de publicação](fundacao-web.md)
 - [Validação da fundação web](validacao-fundacao-web.md)
 - [Exploração detalhada](exploracao-detalhada.md)
+- [Simulador de cenários](simulador-de-cenarios.md)
+- [Gate de publicação e revisão humana](gate-de-publicacao.md)
 - [Tokens visuais](tokens-visuais.md)
 
 ## Estado

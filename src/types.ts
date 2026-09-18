@@ -11,6 +11,8 @@ export interface BudgetNode {
   level: number;
   parent_node_id: string | null;
   sort_order: number;
+  is_terminal: boolean;
+  factual_tags: string[];
   source: SourceReference;
 }
 
@@ -24,7 +26,7 @@ export interface PublishedSource {
 }
 
 export interface PublicationData {
-  schema_version: number;
+  schema_version: 2;
   dataset_sha256: string;
   release: {
     release_id: string;
@@ -37,6 +39,7 @@ export interface PublicationData {
     official_name: string;
     dimension: "programmatic";
     root_node_id: string;
+    selectable: boolean;
     coverage: {
       institutional_universe: string;
       social_security: string;
@@ -50,4 +53,8 @@ export interface PublicationData {
   };
   nodes: BudgetNode[];
   sources: PublishedSource[];
+  demo?: {
+    mode: "personal_local";
+    notice: string;
+  };
 }

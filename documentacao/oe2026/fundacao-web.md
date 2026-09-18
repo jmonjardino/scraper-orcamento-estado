@@ -2,7 +2,7 @@
 
 ## Decisão de stack
 
-A interface é uma aplicação multipágina estática com Vite, React e TypeScript, estilizada com CSS nativo. Há dois documentos HTML reais: o resumo em `/` e a metodologia em `/metodologia/`.
+A interface é uma aplicação multipágina estática com Vite, React e TypeScript, estilizada com CSS nativo. Há quatro documentos HTML reais: o resumo em `/`, a exploração em `/explorar/`, o simulador em `/simulador/` e a metodologia em `/metodologia/`.
 
 A escolha responde aos requisitos desta fase:
 
@@ -17,6 +17,12 @@ A escolha responde aos requisitos desta fase:
 `npm run build:ui` compila apenas a interface. O modo `ui` do Vite não tem `publicDir`, por isso não transporta o conjunto normalizado, o relatório nem um pacote anteriormente gerado. Em execução, a aplicação faz um único pedido de dados para `/data/current.json`; links para documentos oficiais são navegação iniciada pela pessoa, não pedidos automáticos da aplicação.
 
 Enquanto não existir um pacote, a página apresenta uma falha explicada e o botão “Tentar novamente”. Existem também estados distintos de carregamento e de pacote vazio. O resumo, cartões e ligações às fontes só aparecem no estado pronto.
+
+## Demonstração pessoal local
+
+`npm run build:demo` é uma via separada para experimentar localmente a aplicação com o conjunto real tecnicamente validado. Valida a identidade do conjunto, o relatório e todas as reconciliações, mas não substitui o gate de publicação: não aceita termos de reutilização como resolvidos, não requer aprovação humana e não produz uma release destinada a alojamento público. O payload inclui uma marca permanente de demonstração pessoal local.
+
+A EO anunciou a disponibilização dos dados OE 2026 nos formatos abertos do Dados.gov. Os termos gerais desse portal preveem CC BY 4.0 para dados carregados por organismos do Estado salvo indicação em contrário. Esta informação não é aplicada retroativamente aos ficheiros diretos da EO no catálogo: a URL e licença do recurso OE 2026 concreto continuam obrigatórias antes de distribuição pública.
 
 ## Gate do pacote publicável
 
@@ -34,7 +40,9 @@ O comando recusa publicar quando qualquer uma destas condições não se verific
 - falta uma reconciliação, ou alguma reconciliação não passou;
 - há bloqueios no relatório ou no conjunto;
 - `publication_eligible` não é exatamente `true`;
+- `selectable`, `is_terminal` ou `factual_tags` não têm os tipos exigidos pelo contrato público;
 - uma fonte não usa HTTPS num domínio oficial aprovado, falta no catálogo ou tem termos por resolver;
+- uma fonte com termos resolvidos não contém evidência do recurso exato, URL da licença, data de verificação e declaração registada;
 - a aprovação humana falta, não diz `approved`, não identifica pessoa/data ou aponta para outro SHA/release/vista.
 
 A aprovação tem esta estrutura mínima (o ficheiro real só deve ser criado após a revisão):
@@ -56,7 +64,7 @@ Quando passa, o empacotador escreve JSON canónico e determinista em:
 - `.generated/public/data/current.json`;
 - `.generated/public/data/releases/<dataset_sha256>.json`.
 
-Os dois ficheiros contêm o mesmo envelope público reduzido: metadados de release/vista, nós necessários à apresentação e fontes enriquecidas com URL. Não incluem o relatório, a aprovação, o catálogo completo nem campos internos do normalizador. Só então `build:release` executa typecheck e Vite no modo que copia `.generated/public`.
+Os dois ficheiros contêm o mesmo envelope público reduzido, na versão 2: metadados de release/vista, `view.selectable`, nós com `is_terminal` e `factual_tags`, e fontes enriquecidas com URL. Não incluem o relatório, a aprovação, o catálogo completo nem campos internos do normalizador. Só então `build:release` executa typecheck e Vite no modo que copia `.generated/public`.
 
 ## Estado do OE 2026
 

@@ -19,7 +19,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 class PublicationError(Exception):
@@ -64,6 +64,25 @@ def valid_iso8601_datetime(value: Any) -> bool:
         datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
     except ValueError:
         return False
+    return True
+
+
+def valid_reuse_evidence(artifact: dict[str, Any]) -> bool:
+    """Confirma que uma licença resolvida é atribuível ao recurso exato."""
+    evidence = artifact.get("reuse_evidence")
+    if not isinstance(evidence, dict):
+        return False
+    resource_url = evidence.get("resource_url")
+    license_url = evidence.get("license_url")
+    statement = evidence.get("statement")
+    if resource_url != artifact.get("url") or not isinstance(statement, str) or not statement.strip():
+        return False
+    if not valid_iso8601_datetime(evidence.get("checked_at")):
+        return False
+    for url in (resource_url, license_url):
+        parsed = urlparse(str(url))
+        if parsed.scheme != "https" or not parsed.hostname:
+            return False
     return True
 
 
@@ -135,6 +154,8 @@ def validate_gate(
             reasons.append(f"dataset_publication_blocker:{blocker}")
     if view.get("publication_eligible") is not True:
         reasons.append("publication_eligible_not_true")
+    if not isinstance(view.get("selectable"), bool):
+        reasons.append("view_selectable_invalid")
 
     if (
         catalog_release.get("year") != release.get("year")
@@ -174,11 +195,22 @@ def validate_gate(
                 "to_be_confirmed",
             }:
                 reasons.append(f"reuse_terms_unresolved:{source_id}")
+            elif not valid_reuse_evidence(artifact):
+                reasons.append(f"reuse_evidence_invalid:{source_id}")
 
     if not isinstance(nodes, list) or not nodes:
         reasons.append("dataset_nodes_empty")
     else:
         for node in nodes:
+            node_id = node.get("node_id") if isinstance(node, dict) else None
+            if not isinstance(node, dict) or not isinstance(node.get("is_terminal"), bool):
+                reasons.append(f"node_is_terminal_invalid:{node_id}")
+            factual_tags = node.get("factual_tags") if isinstance(node, dict) else None
+            if (
+                not isinstance(factual_tags, list)
+                or any(not isinstance(tag, str) or not tag.strip() for tag in factual_tags)
+            ):
+                reasons.append(f"node_factual_tags_invalid:{node_id}")
             source = node.get("source") if isinstance(node, dict) and isinstance(node.get("source"), dict) else {}
             source_id = source.get("source_id")
             if source_id not in source_catalog:
@@ -240,6 +272,8 @@ def publication_payload(
             "level": node["level"],
             "parent_node_id": node.get("parent_node_id"),
             "sort_order": node["sort_order"],
+            "is_terminal": node["is_terminal"],
+            "factual_tags": node["factual_tags"],
             "source": {
                 "source_id": node["source"]["source_id"],
                 "locator": node["source"]["locator"],
@@ -261,6 +295,7 @@ def publication_payload(
             "official_name": view["official_name"],
             "dimension": view["dimension"],
             "root_node_id": view["root_node_id"],
+            "selectable": view["selectable"],
             "coverage": view["coverage"],
         },
         "nodes": nodes,

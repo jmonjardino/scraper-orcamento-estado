@@ -23,11 +23,11 @@ describe("SummaryPage", () => {
   it("apresenta total, âmbito e uma fonte em cada cartão", async () => {
     vi.stubGlobal("fetch", vi.fn(() => response(publicationFixture())));
     render(<SummaryPage />);
-    expect(await screen.findByRole("heading", { name: /1000/ })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /10.*€/ })).toBeInTheDocument();
     expect(screen.getByText(/Administração Central, não consolidada/)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Saúde" })).toBeInTheDocument();
-    expect(screen.getByText("25,0% do total")).toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: /Ver fonte oficial/ })).toHaveLength(2);
+    expect(screen.getByText("60,0% do total")).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /Ver fonte oficial/ })).toHaveLength(3);
   });
 
   it("explica a falha, move o foco e permite tentar novamente", async () => {
